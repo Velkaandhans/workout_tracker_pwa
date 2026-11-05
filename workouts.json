@@ -1,0 +1,260 @@
+{
+  "Monday": {
+    "focus": "Legs + Shoulders",
+    "mode": "Strength emphasis",
+    "warmup": "Optional only if cleared and pain-free: sit-ups + push-ups. Otherwise use clinician-approved warm-up.",
+    "exercises": [
+      [
+        "Leg Press",
+        3,
+        "6\u20138",
+        "Use only within knee/back tolerance; controlled depth."
+      ],
+      [
+        "Lying Leg Curl",
+        3,
+        "8\u201310",
+        "Replacement for unavailable seated leg curl; only if comfortable."
+      ],
+      [
+        "Leg Extension",
+        2,
+        "8\u201310",
+        "Pain-free range; stop if knee pain."
+      ],
+      [
+        "Dumbbell Lateral Raise",
+        3,
+        "8\u201312",
+        "Light, strict and pain-free; replacement for machine lateral raise."
+      ],
+      [
+        "Reverse Pec Deck",
+        2,
+        "10\u201312",
+        "Keep shoulder range comfortable."
+      ],
+      [
+        "Hanging Knee Raise",
+        2,
+        "8\u201312",
+        "Omit if it aggravates shoulder/back; use only an approved alternative."
+      ]
+    ]
+  },
+  "Tuesday": {
+    "focus": "Chest + Triceps",
+    "mode": "Strength emphasis",
+    "warmup": "Optional only if cleared and pain-free: dips + sit-ups. Dips are not required; use clinician-approved warm-up if uncomfortable.",
+    "exercises": [
+      [
+        "Barbell Bench Press",
+        3,
+        "6\u20138",
+        "User-requested replacement; only if shoulder is cleared and pain-free."
+      ],
+      [
+        "Incline Dumbbell Press",
+        3,
+        "8\u201310",
+        "Use a comfortable incline and shoulder range."
+      ],
+      [
+        "Pec Deck",
+        2,
+        "10\u201312",
+        "Do not force a deep stretch."
+      ],
+      [
+        "Rope Triceps Pushdown",
+        3,
+        "8\u201310",
+        "Controlled elbow movement."
+      ],
+      [
+        "Single-Arm Cable Triceps Extension",
+        2,
+        "10\u201312",
+        "Choose a shoulder-comfortable arm position."
+      ],
+      [
+        "Wrist Curl",
+        2,
+        "12\u201315",
+        "Forearm accessory."
+      ]
+    ]
+  },
+  "Wednesday": {
+    "focus": "Back + Biceps",
+    "mode": "Strength emphasis",
+    "warmup": "Optional only if cleared and pain-free: pull-ups + push-ups. Otherwise use clinician-approved warm-up.",
+    "exercises": [
+      [
+        "Neutral-Grip Lat Pulldown",
+        3,
+        "8\u201310",
+        "Replaces weighted pull-ups; controlled, no swinging."
+      ],
+      [
+        "Chest-Supported Row",
+        3,
+        "8\u201310",
+        "Chest support reduces unsupported trunk loading."
+      ],
+      [
+        "Seated Cable Row",
+        2,
+        "10\u201312",
+        "Neutral spine; stop if back symptoms appear."
+      ],
+      [
+        "EZ-Bar Biceps Curl",
+        3,
+        "8\u201310",
+        "Avoid body swing."
+      ],
+      [
+        "Hammer Curl",
+        2,
+        "10\u201312",
+        "Controlled repetitions."
+      ],
+      [
+        "Neck Isometric Holds",
+        2,
+        "10\u201315 sec",
+        "Only if cleared; gentle submaximal pressure. Omit with neck symptoms."
+      ]
+    ]
+  },
+  "Thursday": {
+    "focus": "Legs + Shoulders",
+    "mode": "Hypertrophy / endurance emphasis",
+    "warmup": "Optional only if cleared and pain-free: sit-ups + push-ups. Otherwise use clinician-approved warm-up.",
+    "exercises": [
+      [
+        "Leg Press",
+        3,
+        "12\u201315",
+        "Same exercise as Monday; only within knee/back tolerance."
+      ],
+      [
+        "Lying Leg Curl",
+        3,
+        "12\u201315",
+        "Same exercise as Monday."
+      ],
+      [
+        "Leg Extension",
+        2,
+        "12\u201315",
+        "Same exercise as Monday; pain-free range."
+      ],
+      [
+        "Dumbbell Lateral Raise",
+        3,
+        "12\u201315",
+        "Same exercise as Monday; light and strict."
+      ],
+      [
+        "Reverse Pec Deck",
+        2,
+        "12\u201315",
+        "Same exercise as Monday."
+      ],
+      [
+        "Hanging Knee Raise",
+        2,
+        "12\u201315",
+        "Omit if it aggravates shoulder/back; use only an approved alternative."
+      ]
+    ]
+  },
+  "Friday": {
+    "focus": "Chest + Triceps",
+    "mode": "Hypertrophy / endurance emphasis",
+    "warmup": "Optional only if cleared and pain-free: dips + sit-ups. Otherwise use clinician-approved warm-up.",
+    "exercises": [
+      [
+        "Barbell Bench Press",
+        3,
+        "10\u201312",
+        "Same exercise as Tuesday; shoulder must remain cleared and pain-free."
+      ],
+      [
+        "Incline Dumbbell Press",
+        3,
+        "10\u201312",
+        "Same exercise as Tuesday."
+      ],
+      [
+        "Pec Deck",
+        2,
+        "12\u201315",
+        "Same exercise as Tuesday."
+      ],
+      [
+        "Rope Triceps Pushdown",
+        3,
+        "12\u201315",
+        "Same exercise as Tuesday."
+      ],
+      [
+        "Single-Arm Cable Triceps Extension",
+        2,
+        "12\u201315",
+        "Same exercise as Tuesday."
+      ],
+      [
+        "Reverse Wrist Curl",
+        2,
+        "12\u201315",
+        "Forearm accessory."
+      ]
+    ]
+  },
+  "Saturday": {
+    "focus": "Back + Biceps",
+    "mode": "Hypertrophy / endurance emphasis",
+    "warmup": "Optional only if cleared and pain-free: pull-ups + push-ups. Otherwise use clinician-approved warm-up.",
+    "exercises": [
+      [
+        "Neutral-Grip Lat Pulldown",
+        3,
+        "12\u201315",
+        "Same exercise as Wednesday."
+      ],
+      [
+        "Chest-Supported Row",
+        3,
+        "12\u201315",
+        "Same exercise as Wednesday."
+      ],
+      [
+        "Seated Cable Row",
+        2,
+        "12\u201315",
+        "Same exercise as Wednesday; neutral spine."
+      ],
+      [
+        "EZ-Bar Biceps Curl",
+        3,
+        "12\u201315",
+        "Same exercise as Wednesday."
+      ],
+      [
+        "Hammer Curl",
+        2,
+        "12\u201315",
+        "Same exercise as Wednesday."
+      ],
+      [
+        "Neck Isometric Holds",
+        2,
+        "15\u201320 sec",
+        "Same accessory as Wednesday; only if cleared."
+      ]
+    ]
+  }
+}

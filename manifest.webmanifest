@@ -1,0 +1,18 @@
+{
+  "name": "Workout Tracker",
+  "short_name": "Workout",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#142d4e",
+  "description": "Offline-first six-day workout tracker",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

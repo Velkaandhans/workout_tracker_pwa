@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#142d4e">
+  <meta name="description" content="Offline-first six-day workout tracker">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Workout Tracker</title>
+  <style>
+    :root{--navy:#142d4e;--blue:#286090;--bg:#f3f6fa;--card:#fff;--text:#17212b;--muted:#657383;--line:#dce3eb;--green:#16794b;--amber:#8a5b00;--red:#a12b2b}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    header{background:var(--navy);color:#fff;padding:18px 16px 16px;position:sticky;top:0;z-index:5}
+    header .top{display:flex;justify-content:space-between;align-items:center;gap:12px} h1{font-size:20px;margin:0} .sub{font-size:12px;color:#d5e0ed;margin-top:3px}
+    main{max-width:760px;margin:auto;padding:14px 14px 90px}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 12px}
+    button,select,input{font:inherit} button{border:0;border-radius:10px;padding:10px 13px;background:var(--navy);color:white;font-weight:650;cursor:pointer}
+    button.secondary{background:#e7edf4;color:var(--navy)} button.danger{background:#f9e5e5;color:var(--red)} button.small{padding:7px 10px;font-size:12px}
+    .daybtn{white-space:nowrap;background:#e5ebf2;color:var(--navy)} .daybtn.active{background:var(--navy);color:#fff}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px;margin:0 0 12px;box-shadow:0 2px 8px #142d4e08}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#f5f8fb;border-radius:12px;padding:12px}.metric strong{font-size:25px;display:block}.metric small{color:var(--muted)}
+    h2{font-size:18px;margin:0 0 8px} h3{font-size:16px;margin:0} p{margin:6px 0;color:var(--muted)} .pill{display:inline-block;border-radius:30px;background:#e8eff7;color:var(--navy);padding:4px 9px;font-size:11px;font-weight:700}
+    .notice{border-left:4px solid #d39a28;background:#fff8e8;padding:11px 12px;border-radius:8px;font-size:13px;margin-bottom:12px}
+    .exercise{padding:13px 0;border-top:1px solid var(--line)} .exercise:first-of-type{border-top:0}.exhead{display:flex;justify-content:space-between;gap:10px;align-items:start}.pres{font-size:12px;color:var(--blue);font-weight:700;white-space:nowrap}
+    .cue{font-size:12px;color:var(--muted);margin:4px 0 9px}.setrow{display:grid;grid-template-columns:34px 1fr 1fr 1fr;gap:7px;align-items:center;margin:6px 0}
+    .setno{font-size:12px;color:var(--muted);font-weight:700}.setrow input{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:9px 7px;background:#fff}
+    label{display:block;font-size:10px;color:var(--muted);margin:0 0 3px}.field{min-width:0}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid2 input{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px}
+    .historyitem{border-top:1px solid var(--line);padding:10px 0}.muted{color:var(--muted);font-size:12px}.hidden{display:none!important}
+    .progressbar{height:9px;background:#e7edf3;border-radius:20px;overflow:hidden;margin:8px 0}.progressbar span{display:block;height:100%;background:var(--green);width:0}
+    .footer{font-size:11px;color:var(--muted);text-align:center;padding:15px}.sethead{display:grid;grid-template-columns:34px 1fr 1fr 1fr;gap:7px;margin:8px 0 2px}
+    .sethead span{font-size:10px;color:var(--muted)} .empty{padding:16px;text-align:center;color:var(--muted)}
+    @media(min-width:600px){main{padding-top:22px}.setrow input{padding:10px}}
+  </style>
+</head>
+<body>
+<header><div class="top"><div><h1>Workout Tracker</h1><div class="sub">98 kg → 92 kg · Strength retention</div></div><button class="small secondary" id="installBtn" hidden>Install</button></div></header>
+<main>
+  <section class="card hero">
+    <div class="metric"><small>Current weight (kg)</small><strong id="currentWeight">98.0</strong></div>
+    <div class="metric"><small>Target weight (kg)</small><strong>92.0</strong></div>
+    <div style="grid-column:1/-1"><div class="progressbar"><span id="weightProgress"></span></div><small id="weightRemaining" class="muted">6.0 kg to target</small></div>
+  </section>
+
+  <nav class="tabs" id="dayTabs" aria-label="Workout days"></nav>
+  <section class="notice"><strong>Return-to-training caution:</strong> This tracker does not provide medical clearance. Use loaded exercises only within your clinician's restrictions. Stop any movement that reproduces shoulder, back or knee pain. The requested pull-ups, push-ups, sit-ups and dips are optional only if specifically cleared and pain-free; otherwise use your clinician-approved warm-up.</section>
+
+  <section id="workoutView"></section>
+  <section class="card">
+    <h2>Body-weight log</h2>
+    <p>Record your morning weight under similar conditions.</p>
+    <div class="grid2"><div><label for="weightDate">Date</label><input id="weightDate" type="date"></div><div><label for="weightInput">Weight (kg)</label><input id="weightInput" type="number" min="30" max="300" step="0.1" placeholder="e.g. 97.5"></div></div>
+    <div class="actions"><button id="saveWeight">Save weight</button></div>
+    <div id="weightHistory"></div>
+  </section>
+
+  <section class="card">
+    <h2>Workout history</h2><p>Saved on this browser and device.</p>
+    <div id="history"></div>
+  </section>
+  <section class="card">
+    <h2>Backup & restore</h2>
+    <p>Local browser data can be lost if browser storage is cleared or the device changes. Export backups regularly and keep a copy somewhere safe.</p>
+    <div class="actions"><button id="exportBtn">Export backup</button><label class="secondary" style="display:inline-flex;align-items:center;border-radius:10px;padding:10px 13px;font-size:13px;font-weight:650;color:var(--navy);background:#e7edf4;cursor:pointer">Import backup<input id="importFile" type="file" accept="application/json" hidden></label></div>
+    <div class="actions"><button class="danger small" id="clearBtn">Delete all local data</button></div>
+  </section>
+  <div class="footer">Offline-first · Data stays in this browser's local storage · No account or cloud sync</div>
+</main>
+<script src="app.js"></script>
+</body></html>
